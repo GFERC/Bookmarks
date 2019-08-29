@@ -21,7 +21,7 @@ use pipeline and grep - cat ./data.txt | grep millionth
 sort data.txt | uniq -u
 
 ### L9: find human readable strings
-use strings <filename>
+use strings - strings data.txt | grep =
 
 # Passwords
 ## Bandict
