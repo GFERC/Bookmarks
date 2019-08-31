@@ -25,7 +25,7 @@
   quiet-waters-1228.herokuapp.com/echo -H "Accept: application/json"
 ### Setting Headers
 1. -H "Accept: application/json" : response type is json. also for -H "Content-Type: application/json"
-
+2. curl -H "User-Agent:" http://example.com/, switch off user agent by giving it empty value.
 
 ## Command Parameters
 1. curl -L: force redirect
