@@ -9,6 +9,10 @@
               data" sent by curl, '<' means "header data" received by curl that is hidden in normal cases, and a line starting with '*' means additional info pro-
               vided by curl.
 3. curl --trace url: if curl -v still not enough.
+4. curl --version: get version and supported protocol list and feature list. curl 7.54.0 (x86_64-apple-darwin18.0) sample output: libcurl/7.54.0 LibreSSL/2.6.5 zlib/1.2.11 nghttp2/1.24.1
+Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtsp smb smbs smtp smtps telnet tftp 
+Features: AsynchDNS IPv6 Largefile GSS-API Kerberos SPNEGO NTLM NTLM_WB SSL libz HTTP2 UnixSockets HTTPS-proxy 
+
 
 ### HTTP Request Methods
 1. curl url is by default http get
