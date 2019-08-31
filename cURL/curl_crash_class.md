@@ -30,4 +30,11 @@
 ## Command Parameters
 1. curl -L: force redirect
 2. curl -u : authentifiction with username and password. curl -X POST -u "user1:password1" quiet-waters-1228.herokuapp.com/login
-3. curl -o: save reponse to an output curl -o out.json http://www.example.com/index.html
+3. curl -o: save reponse to an output with custom file name curl -o out.json http://www.example.com/index.html
+4. curl -O: save file and the file is downloaded from the server to the current working directory using the same name as the file on the server.
+5. -D: The -D flag will tell cURL to dump headers and cookies into a specified file in the current directory. curl -X POST -D headers -u "user1:password1" quiet-waters-1228.herokuapp.com/login same as --dump-header
+6. -b:  pass the headers file back to the server with our request. curl -b headers quiet-waters-1228.herokuapp.com/whoami
+7. with item 5 -D and item 6 -b, we handle a page that is behind a login, yet doesn’t respond to HTTP auth.
+8. -c: When using the –dump-header flag we not only capture the cookies from a response, but also all of the headers from that response. This may or may not be what you want. -c only stores the cookie jar. curl -X POST -c cookies.txt -u "user1:password1" quiet-waters-1228.herokuapp.com/login. To use the stored cookie,  curl -b cookies.txt quiet-waters-1228.herokuapp.com/whoami
+
+
