@@ -21,7 +21,7 @@ Features: AsynchDNS IPv6 Largefile GSS-API Kerberos SPNEGO NTLM NTLM_WB SSL libz
 
 ### Query Strings
 1. send query strings in url : curl -X POST "quiet-waters-1228.herokuapp.com/echo?fname=Mark&lname=Bates"
-2. pass in -d : son format or only query string part: curl -X POST -d "fname=Mark&lname=Bates" quiet-waters-1228.herokuapp.com/echo
+2. pass in -d : json format or only query string part: curl -X POST -d "fname=Mark&lname=Bates" quiet-waters-1228.herokuapp.com/echo
 3. if query string needs to be encoded: curl --data-urlencode "querykey1=unencoded_vale1" --data-urlencode "querykey2=unencoded_vale2" ...
 4. -d is mainly used for HTTP POST, use curl -G -d if this is for http get. -G means "get"
 5. read from file: curl -d @file_name : curl -X POST -d @form_data.json quiet-waters-1228.herokuapp.com/echo
