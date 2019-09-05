@@ -3,7 +3,7 @@
 2. delete a bucket: aws s3 rb s3://bucket-name. if bucket is not empty, use aws s3 rb s3://bucket-name --force
 3. list buckets: aws s3 ls. list items in a bucket, aws s3 ls s3://bucket-name
 4. [cp](https://docs.aws.amazon.com/cli/latest/reference/s3/cp.html) files: aws s3 cp source dest [--exclude value] [--include value] [--recursive], e.g aws s3 cp ./ s3://source-0904-test --exclude "*" --include "a*" --recursive
-5. difference between cp and sync: Using aws s3 cp from the AWS cli will require the --recursive parameter to copy multiple files. The aws s3 sync command will, by default, copy a whole directory. It will only copy new/modified files.
+5. difference between cp and sync: Using aws s3 cp from the AWS cli will require the --recursive parameter to copy multiple files. The aws s3 sync command will, by default, copy a whole directory. It will only copy ***new/modified*** files.
 
 ## Deal with Multiple AWS Accounts
 ### aws configure command
