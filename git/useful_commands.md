@@ -47,3 +47,11 @@ git add -p filename. Stage this hunk [y,n,q,a,d,j,J,g,/,e,?]? [REF](https://git-
 
 ### 8. Check Stats between 2 Commits (lines added and lines removed)
 git diff ac47442 dc496cb —stat
+
+### 9. Ignore docs for tracking
+put files in .gitignore file. This file is at the same level as .git.
+
+### 10. git add a bunch of files all together
+Use wildcards. Git add file presented by whildcards: git add Documents/\*.txt
+
+
