@@ -16,3 +16,8 @@ this packet will reply to it, allowing the network connection to be verified. It
 a host from a potential attacker. It is also common for firewalls to be configured to block IMCP traffic.
 
 E.g ping google.com
+
+### traceroute
+The traceroute program (some systems use the similar tracepath program instead) displays a listing of all the “hops” network traffic takes to get from the local system to a specified host.
+
+E.g traceroute google.com
