@@ -21,3 +21,6 @@ E.g ping google.com
 The traceroute program (some systems use the similar tracepath program instead) displays a listing of all the “hops” network traffic takes to get from the local system to a specified host.
 
 E.g traceroute google.com
+
+### netstat
+The netstat program is used to examine various network settings and statistics
