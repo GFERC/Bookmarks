@@ -24,3 +24,8 @@ E.g traceroute google.com
 
 ### netstat
 The netstat program is used to examine various network settings and statistics
+
+### ssh
+SSH solves the two basic problems of secure communication with a remote host. First, it authenticates that the remote host is who it says it is (thus preventing so-called “man in the middle” attacks), and second, it encrypts all of the communications between the local and remote hosts.
+
+SSH consists of two parts. An SSH server runs on the remote host, listening for incoming connections on port 22, while an SSH client is used on the local system to communicate with the remote server.
