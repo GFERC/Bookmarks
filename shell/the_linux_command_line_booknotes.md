@@ -29,3 +29,39 @@ The netstat program is used to examine various network settings and statistics
 SSH solves the two basic problems of secure communication with a remote host. First, it authenticates that the remote host is who it says it is (thus preventing so-called “man in the middle” attacks), and second, it encrypts all of the communications between the local and remote hosts.
 
 SSH consists of two parts. An SSH server runs on the remote host, listening for incoming connections on port 22, while an SSH client is used on the local system to communicate with the remote server.
+
+Example failure
+```
+[me@linuxbox ~]$ ssh remote-sys 
+@ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that the RSA host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is 41:ed:7a:df:23:19:bf:3c:a5:17:bc:61:b3:7f:d9:bb.
+Please contact your system administrator.
+Add correct host key in /home/me/.ssh/known_hosts to get rid of this message.
+Offending key in /home/me/.ssh/known_hosts:1
+RSA host key for remote-sys has changed and you have requested strict checking.
+Host key verification failed.
+```
+This message is caused by one of two possible situations. First, an attacker may be at- tempting a “man-in-the-middle” attack. This is rare, since everybody knows that ssh alerts the user to this. The more likely culprit is that the remote system has been changed somehow; for example, its operating system or SSH server has been reinstalled. In the in- terests of security and safety however, the first possibility should not be dismissed out of hand. Always check with the administrator of the remote system when this message occurs.
+
+After it has been determined that the message is due to a benign cause, it is safe to correct the problem on the client side. This is done by using a text editor (vim perhaps) to re- move the obsolete key from the ~/.ssh/known_hosts file. In the example message above, we see this:
+
+`Offending key in /home/me/.ssh/known_hosts:1`
+
+This means that line one of the known_hosts file contains the offending key. Delete this line from the file, and the ssh program will be able to accept new authentication cre- dentials from the remote system.
+
+ssh also allows us to execute a sin- gle command on a remote system. For example, to execute the free command on a re- mote host named remote-sys and have the results displayed on the local system :
+
+ssh remote-sys free
+
+ssh remote-sys 'ls *' > dirlist.txt
+
+Notice the use of the single quotes in the command above. This is done because we do not want the pathname expansion performed on the local machine; rather, we want it to be performed on the remote system
+
+### sftp
+sftp has an important advantage over conventional ftp in that it does not require an FTP server to be running on the remote host. It only requires the SSH server. This means that any remote machine that can connect with the SSH client can also be used as a FTP-like server.
+
+The SFTP protocol is supported by many of the graphical file managers found in Linux distributions. Using either Nautilus (GNOME) or Konqueror (KDE), we can enter a URI beginning with sftp:// into the location bar and operate on files stored on a remote system running an SSH server.
+
