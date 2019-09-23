@@ -54,3 +54,5 @@ information is part of the module’s interface. The informal aspects of an
 interface can only be described using comments, and the programming language
 cannot ensure that the description is complete or accurate. This helps
 to eliminate the “unknown unknowns” problem
+
+Hide unnessasary details and make comman usage interface simple.
