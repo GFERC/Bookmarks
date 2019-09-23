@@ -32,6 +32,9 @@ design. This is the opposite of tactical programming, where you are continually
 adding small bits of complexity that cause problems in the future.
 
 ## Chapter 4 Modules Should Be Deep
+Hide unnessasary details and make comman usage interface simple.
+
+### What is a module?
 we think of each module in two parts: an
 interface and an implementation. The interface consists of everything that a
 developer working in a different module must know in order to use the given
@@ -54,5 +57,3 @@ information is part of the module’s interface. The informal aspects of an
 interface can only be described using comments, and the programming language
 cannot ensure that the description is complete or accurate. This helps
 to eliminate the “unknown unknowns” problem
-
-Hide unnessasary details and make comman usage interface simple.
