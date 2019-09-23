@@ -2,7 +2,7 @@
 The most fundamental problem in computer science is problem decomposition: how to take a complex problem and divide it up into pieces that
 can be solved independently.
 
-## Chapter 1
+## Chapter 1 and Chapter 2
 ### High level 2 ways to fighting complexity
 The first approach is to eliminate complexity by making code simpler and more obvious. For example, complexity can be reduced by eliminating special cases or using identifiers in a consistent fashion.
 
