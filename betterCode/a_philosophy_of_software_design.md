@@ -57,3 +57,36 @@ information is part of the module’s interface. The informal aspects of an
 interface can only be described using comments, and the programming language
 cannot ensure that the description is complete or accurate. This helps
 to eliminate the “unknown unknowns” problem
+
+## Chapter 5 Information Hiding (and Leakage)
+### Information Hiding
+Use encapsulation to hide knowledge from interface. Put them in implementation. Hide information wisely - only hide information that are 
+
+If a piece of information is hidden, there are no dependencies on that information
+outside the module containing the information, so a design change related to that
+information will affect only the one module.
+
+### Information leakage
+One way to deal with information leakage is merging 2 classes together. Another possible approach is to pull the
+information out of all of the affected classes and create a new class that
+encapsulates just that information. However, this approach will be effective only
+if you can find a simple interface that abstracts away from the details; if the new
+class exposes most of the knowledge through its interface, then it won’t provide
+much value (you’ve simply replaced back-door leakage with leakage through an
+interface).
+
+Information leakage
+occurs when a design decision is reflected in multiple modules. This creates a
+dependency between the modules: any change to that design decision will
+require changes to all of the involved modules.
+
+information can be leaked even if it doesn’t appear in a module’s
+interface. Suppose two classes both have knowledge of a particular file format
+(perhaps one class reads files in that format and the other class writes them).Even if neither class exposes that information in its interface, they both depend
+on the file format: if the format changes, both classes will need to be modified.
+
+When decomposing a system into modules, try not to be influenced by the
+order in which operations will occur at runtime; that will lead you down the path
+of temporal decomposition. focus on the
+knowledge that’s needed to perform each task, not the order in which tasks
+occur.
