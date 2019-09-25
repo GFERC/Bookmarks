@@ -90,3 +90,19 @@ order in which operations will occur at runtime; that will lead you down the pat
 of temporal decomposition. focus on the
 knowledge that’s needed to perform each task, not the order in which tasks
 occur.
+
+## Chapter 6
+One of the most
+important elements of software design is determining who needs to know what,
+and when. When the details are important, it is better to make them explicit and
+as obvious as possible.
+
+some questions you can ask yourself, which will help you to find
+the right balance between general-purpose and special-purpose for an interface:
+1. What is the simplest interface that will cover all my current needs? If you
+reduce the number of methods in an API without reducing its overall
+capabilities, then you are probably creating more general-purpose methods. Reducing the number
+of methods makes sense only as long as the API for each individual method
+stays simple; if you have to introduce lots of additional arguments in order to
+reduce the number of methods, then you may not really be simplifying things.
+2. 
