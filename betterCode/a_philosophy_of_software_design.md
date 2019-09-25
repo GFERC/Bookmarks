@@ -91,7 +91,7 @@ of temporal decomposition. focus on the
 knowledge that’s needed to perform each task, not the order in which tasks
 occur.
 
-## Chapter 6
+## Chapter 6 General-Purpose Modules
 One of the most
 important elements of software design is determining who needs to know what,
 and when. When the details are important, it is better to make them explicit and
@@ -105,4 +105,9 @@ capabilities, then you are probably creating more general-purpose methods. Reduc
 of methods makes sense only as long as the API for each individual method
 stays simple; if you have to introduce lots of additional arguments in order to
 reduce the number of methods, then you may not really be simplifying things.
-2. 
+2. In how many situations will this method be used?
+3. Is this API easy to use for my current needs? This question can help you to
+determine when you have gone too far in making an API simple and generalpurpose.
+If you have to write a lot of additional code to use a class for your
+current purpose, that’s a red flag that the interface doesn’t provide the right
+functionality.
