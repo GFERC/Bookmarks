@@ -111,3 +111,23 @@ determine when you have gone too far in making an API simple and generalpurpose.
 If you have to write a lot of additional code to use a class for your
 current purpose, that’s a red flag that the interface doesn’t provide the right
 functionality.
+
+## Chapter 7 Different Layer, Different Abstraction
+Pass-through methods indicate that there is confusion over the division of
+responsibility between classes. The solution is to refactor the classes so that each class has a distinct and
+coherent set of responsibilities:
+1. expose the lower level class directly to
+the callers of the higher level class, removing all responsibility for the feature
+from the higher level class. 
+2. redistribute the functionality
+between the classes,
+3. if the classes can’t be disentangled, the best solution may be to merge them
+
+Having methods with the same signature is not always bad. The important thing
+is that each new method should contribute significant functionality. One example where it’s useful for a method to call another method with the
+same signature is a dispatcher. A dispatcher is a method that uses its arguments
+to select one of several other methods to invoke; then it passes most or all of its
+arguments to the chosen method. The signature for the dispatcher is often the
+same as the signature for the methods that it calls. Even so, the dispatcher
+provides useful functionality: it chooses which of several other methods should
+carry out each task.
