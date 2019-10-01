@@ -131,3 +131,9 @@ arguments to the chosen method. The signature for the dispatcher is often the
 same as the signature for the methods that it calls. Even so, the dispatcher
 provides useful functionality: it chooses which of several other methods should
 carry out each task.
+
+
+## Chapter 10 Define Errors Out Of Existence
+Reduce the number of places where exceptions must be handled; in many cases
+the semantics of operations can be modified so that the normal behavior handles
+all situations and there is no exceptional condition to report
