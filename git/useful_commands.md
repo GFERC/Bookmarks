@@ -54,4 +54,7 @@ put files in .gitignore file. This file is at the same level as .git.
 ### 10. git add a bunch of files all together
 Use wildcards. Git add file presented by whildcards: git add Documents/\*.txt
 
+### 11. push local branch to remote branch for the 1st time
+ git push --set-upstream origin remoteBranchName
+
 
